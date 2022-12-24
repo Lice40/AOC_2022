@@ -14,7 +14,7 @@ END    =    \e[0m
 
 $(NAME): main.o 
 	@$(CC) main.o  $(DEBUG) $(FLAGS) $(NAME)
-	@printf "\t$(GRN)compiling of [$(PPL)$(NAME)$(GRN)] complete$(END)\n"
+	@printf "\t$(GRN)compiling [$(PPL)$(NAME)$(GRN)] complete$(END)\n"
 	
 
 all: $(NAME)
@@ -28,7 +28,9 @@ main.o: main.cpp
 #	@$(CC) -c utils.cpp $(DEBUG)
 
 clean:
+	@printf "\t$(CYA)deleting executable [$(PPL)$(NAME)$(CYA)]$(END)\n"
 	@rm -f $(NAME)
+	@printf "\t$(CYA)deleting object files$(END)\n"
 	@rm -f *.o
 
 re: clean $(NAME)
