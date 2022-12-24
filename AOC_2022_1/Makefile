@@ -14,12 +14,15 @@ END    =    \e[0m
 
 $(NAME): main.o 
 	@$(CC) main.o  $(DEBUG) $(FLAGS) $(NAME)
-	@printf "\t$(GRN)compiling$(END)\n"
+	@printf "\t$(GRN)compiling of [$(PPL)$(NAME)$(GRN)] complete$(END)\n"
+	
 
 all: $(NAME)
 
 main.o: main.cpp
+	@printf "\t$(GRN)compiling [$(PPL)main.cpp$(GRN)]$(END)\n"
 	@$(CC) -c main.cpp $(DEBUG)
+	
 
 #utils.o: utils.c
 #	@$(CC) -c utils.cpp $(DEBUG)
