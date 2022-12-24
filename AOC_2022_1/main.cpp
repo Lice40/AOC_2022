@@ -5,16 +5,15 @@
 using namespace std;
 
 void update(int* table[], int val){
-    cout<<"valeur à maj: "<<val<< endl;
-    cout<<"table = { "<< (*table)[0]<<" , "<< (*table)[1]<<" , "<<(*table)[2]<<" }"<<endl;
     for(int i = 0; i < 3; i ++){
         if(val > (*table)[i]){
+            cout<<"table = { "<< (*table)[0]<<" , "<< (*table)[1]<<" , "<<(*table)[2]<<" }"<<endl;
+            cout<<"valeur à maj: "<<val<< endl;
             (*table)[i] = val;
             cout<<"table = { "<< (*table)[0]<<" , "<< (*table)[1]<<" , "<<(*table)[2]<<" }"<<endl;
             return;
         }
     }
-    cout<<"table = { "<< (*table)[0]<<" , "<< (*table)[1]<<" , "<<(*table)[2]<<" }"<<endl;
     return;
 }
 
