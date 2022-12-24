@@ -16,9 +16,9 @@ int normalize(char c){
     return isupper(c)? vec.find((char) tolower(c))+27:vec.find(c)+1; 
 }
 
-int  parse(string p1, string p2){
+int  parse(string p1, string p2, string p3){
     for(int i =0; i<p1.size(); i++){
-        if(p2.find(p1[i]) != std::string::npos){
+        if(p2.find(p1[i]) != std::string::npos && p3.find(p1[i] != std::string::npos)){
             cout<<"carractère commun: "<<p1[i]<<endl;
             cout<<"priorité: " <<normalize(p1[i])<<endl;
             return normalize(p1[i]);
@@ -31,18 +31,21 @@ int main(){
     fstream file;
     file.open("inputs.txt", ios::in);
     int sum=0;
+    int cpt = 0;
     if(!file.is_open()){
         cout<<"erreur d'ouverture du fichier"<<endl;
         exit(-1);
     }
+    string lines[3];
     string line;
-    string m1, m2;
     while(getline(file, line)){
-      /*m1 = line.substr(0, (line.length()/2));
-      m2 = line.substr(line.length()/2,line.length());
-      cout<<"ligne totale: "<<line<<endl<<"moitié 1: "<<m1<<endl<<"moitié 2: "<<m2<<endl;*/
-      sum += parse(m1,m2);
+        lines[cpt%3] = line;
+        if((cpt+1)%3 == 0){
+            cout<<"ligne1: "<<lines[0]<<endl<<"ligne2: "<<lines[1]<<endl<<"ligne3: "<<lines[2]<<endl;
+            sum += parse(lines[0], lines[1], lines[2]);
+        }
+        cpt++;
     }
-    cout<<"somme "<<sum<<endl;
+    cout<<"somme: "<<sum<<endl;
     return 0;
 }
