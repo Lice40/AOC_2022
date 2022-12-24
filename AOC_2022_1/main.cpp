@@ -7,10 +7,10 @@ using namespace std;
 void update(int* table[], int val){
     for(int i = 0; i < 3; i ++){
         if(val > (*table)[i]){
-            cout<<"table = { "<< (*table)[0]<<" , "<< (*table)[1]<<" , "<<(*table)[2]<<" }"<<endl;
-            cout<<"valeur à maj: "<<val<< endl;
+            for(int j = 2; j>i; j--){
+                (*table)[j] = (*table)[j-1];
+            }
             (*table)[i] = val;
-            cout<<"table = { "<< (*table)[0]<<" , "<< (*table)[1]<<" , "<<(*table)[2]<<" }"<<endl;
             return;
         }
     }
