@@ -37,7 +37,7 @@ int main(){
             sum += stoi(line);
         }
     }
-    cout <<"la valeur maximale vaut donc: "<<max[0]+max[1]+max[2]<<endl;
+    cout <<"la valeur maximale vaut donc: "<<max[0]<<" + "<<max[1]<<  " + " << max[2]<<" = "<<max[0]+max[1]+max[2]<<endl;
     delete [] max;
     return 0;
 }
