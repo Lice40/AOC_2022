@@ -25,40 +25,40 @@ int main(){
        switch(line[0]){
         case 'A': //l'ennemi joue pierre
             switch(line[2]){
-                case 'X': //on joue pierre
-                    sum = sum + PLAYER_DRAW + PLAYER_ROCK; 
+                case 'X': //On doit perdre
+                    sum = sum + PLAYER_LOSE+PLAYER_SCISOR;
                 break;
-                case 'Y': //on joue papier
-                    sum = sum + PLAYER_WIN + PLAYER_PAPER;
+                case 'Y': //on doit faire un draw
+                    sum = sum + PLAYER_DRAW+PLAYER_ROCK;
                 break;
-                case 'Z': //on joue ciseaux
-                    sum = sum + PLAYER_LOSE + PLAYER_SCISOR;
+                case 'Z': //on doit gagner
+                    sum = sum + PLAYER_WIN+PLAYER_PAPER;
                 break;
             }
         break;
         case 'B':// l'ennemi joue papier
-            switch(line[2]){
-                case 'X': //on joue pierre
-                    sum = sum + PLAYER_LOSE + PLAYER_ROCK; 
+             switch(line[2]){
+                case 'X': //On doit perdre
+                    sum = sum + PLAYER_LOSE+PLAYER_ROCK;
                 break;
-                case 'Y': //on joue papier
-                    sum = sum + PLAYER_DRAW + PLAYER_PAPER; 
+                case 'Y': //on doit faire un draw
+                    sum = sum + PLAYER_DRAW+PLAYER_PAPER;
                 break;
-                case 'Z': //on joue ciseaux
-                    sum = sum + PLAYER_WIN + PLAYER_SCISOR;
+                case 'Z': //on doit gagner
+                    sum = sum + PLAYER_WIN+PLAYER_SCISOR;
                 break;
             }
         break;
         case 'C':// l'ennemi joue ciseaux
-            switch(line[2]){
-                case 'X': //on joue pierre
-                    sum = sum + PLAYER_WIN+PLAYER_ROCK; 
+             switch(line[2]){
+                case 'X': //On doit perdre
+                    sum = sum + PLAYER_LOSE+PLAYER_PAPER;
                 break;
-                case 'Y': //on joue papier
-                    sum = sum + PLAYER_LOSE + PLAYER_PAPER;
+                case 'Y': //on doit faire un draw
+                    sum = sum + PLAYER_DRAW+PLAYER_SCISOR;
                 break;
-                case 'Z': //on joue ciseaux
-                    sum = sum + PLAYER_DRAW + PLAYER_SCISOR;
+                case 'Z': //on doit gagner
+                    sum = sum + PLAYER_WIN+PLAYER_ROCK;
                 break;
             }
         break;
